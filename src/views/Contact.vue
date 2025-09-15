@@ -172,7 +172,7 @@ const stats = [
                     v-model="form.name" 
                     type="text" 
                     required
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
                     placeholder="Ihr Name"
                   />
                 </div>
@@ -183,7 +183,7 @@ const stats = [
                     id="phone"
                     v-model="form.phone" 
                     type="tel"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
                     placeholder="Ihre Telefonnummer"
                   />
                 </div>
@@ -196,7 +196,7 @@ const stats = [
                   v-model="form.email" 
                   type="email" 
                   required
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
                   placeholder="ihre.email@beispiel.de"
                 />
               </div>
@@ -207,7 +207,7 @@ const stats = [
                   id="company"
                   v-model="form.company" 
                   type="text"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
                   placeholder="Ihr Unternehmen (optional)"
                 />
               </div>
@@ -217,7 +217,7 @@ const stats = [
                 <select 
                   id="subject"
                   v-model="form.subject"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
                 >
                   <option v-for="subject in subjects" :key="subject.value" :value="subject.value">
                     {{ subject.label }}
@@ -232,7 +232,7 @@ const stats = [
                   v-model="form.message" 
                   required
                   rows="6"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200"
+                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white resize-vertical"
                   placeholder="Beschreiben Sie Ihr Anliegen..."
                 ></textarea>
               </div>
