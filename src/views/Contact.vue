@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon } from '@heroicons/vue/24/outline'
+import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon, TrophyIcon, UserGroupIcon, HeartIcon } from '@heroicons/vue/24/outline'
 
 const form = ref({
   name: '',
@@ -84,17 +84,17 @@ const team = [
 
 const stats = [
   { 
-    icon: () => import('@heroicons/vue/24/solid').then(m => m.TrophyIcon), 
+    icon: TrophyIcon, 
     number: '500+', 
     label: 'Erfolgreiche Vermittlungen' 
   },
   { 
-    icon: () => import('@heroicons/vue/24/solid').then(m => m.UserGroupIcon), 
+    icon: UserGroupIcon, 
     number: '15+', 
     label: 'Jahre Erfahrung' 
   },
   { 
-    icon: () => import('@heroicons/vue/24/solid').then(m => m.HeartIcon), 
+    icon: HeartIcon, 
     number: '98%', 
     label: 'Kundenzufriedenheit' 
   }
@@ -160,7 +160,7 @@ const stats = [
           </div>
           
           <!-- Contact Form -->
-          <div class="card p-8">
+          <div class="bg-white rounded-lg shadow-md p-8">
             <h2 class="text-2xl font-semibold text-gray-900 mb-6">Nachricht senden</h2>
             
             <form @submit.prevent="submitForm" class="space-y-6">
@@ -172,7 +172,7 @@ const stats = [
                     v-model="form.name" 
                     type="text" 
                     required
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Ihr Name"
                   />
                 </div>
@@ -183,7 +183,7 @@ const stats = [
                     id="phone"
                     v-model="form.phone" 
                     type="tel"
-                    class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Ihre Telefonnummer"
                   />
                 </div>
@@ -196,7 +196,7 @@ const stats = [
                   v-model="form.email" 
                   type="email" 
                   required
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="ihre.email@beispiel.de"
                 />
               </div>
@@ -207,7 +207,7 @@ const stats = [
                   id="company"
                   v-model="form.company" 
                   type="text"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Ihr Unternehmen (optional)"
                 />
               </div>
@@ -217,7 +217,7 @@ const stats = [
                 <select 
                   id="subject"
                   v-model="form.subject"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
                   <option v-for="subject in subjects" :key="subject.value" :value="subject.value">
                     {{ subject.label }}
@@ -232,12 +232,15 @@ const stats = [
                   v-model="form.message" 
                   required
                   rows="6"
-                  class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 focus:outline-none transition-colors duration-200 bg-white resize-vertical"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-vertical"
                   placeholder="Beschreiben Sie Ihr Anliegen..."
                 ></textarea>
               </div>
               
-              <button type="submit" class="w-full btn-primary">
+              <button 
+                type="submit" 
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200"
+              >
                 Nachricht senden
               </button>
             </form>
@@ -256,7 +259,7 @@ const stats = [
           <div 
             v-for="member in team" 
             :key="member.name"
-            class="text-center card p-6"
+            class="text-center bg-white rounded-lg shadow-md p-6"
           >
             <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
               <img 
@@ -266,7 +269,7 @@ const stats = [
               />
             </div>
             <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ member.name }}</h3>
-            <p class="text-primary-600 font-medium mb-3">{{ member.role }}</p>
+            <p class="text-blue-600 font-medium mb-3">{{ member.role }}</p>
             <p class="text-gray-600">{{ member.description }}</p>
           </div>
         </div>
@@ -280,10 +283,10 @@ const stats = [
           <div 
             v-for="stat in stats" 
             :key="stat.label"
-            class="text-center p-8 card"
+            class="text-center p-8 bg-white rounded-lg shadow-md"
           >
-            <div class="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <component :is="stat.icon" class="w-8 h-8 text-primary-600" />
+            <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <component :is="stat.icon" class="w-8 h-8 text-blue-600" />
             </div>
             <div class="text-4xl font-bold text-gray-900 mb-2">{{ stat.number }}</div>
             <div class="text-gray-600 text-lg">{{ stat.label }}</div>
