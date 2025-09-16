@@ -97,9 +97,6 @@ const footerLinks = {
           <p class="text-gray-400 text-sm">
             © {{ currentYear }} ImmobilienMakler. Alle Rechte vorbehalten.
           </p>
-          <p class="text-gray-400 text-xs mt-2 md:mt-0">
-            Erstellt mit Vue.js & Tailwind CSS
-          </p>
         </div>
       </div>
     </div>
